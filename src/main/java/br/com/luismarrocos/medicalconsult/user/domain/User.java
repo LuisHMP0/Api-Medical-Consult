@@ -28,4 +28,7 @@ public class User {
 
     private Date birthDate;
 
+    public int getId(){
+        return (int) idUser;
+    };
 }
