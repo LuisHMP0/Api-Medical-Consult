@@ -31,4 +31,7 @@ public class User {
     public int getId(){
         return (int) idUser;
     };
+
+    public void setId(Long id) {
+    }
 }
