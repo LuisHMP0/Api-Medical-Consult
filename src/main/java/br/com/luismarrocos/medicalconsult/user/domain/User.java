@@ -1,9 +1,13 @@
 package br.com.luismarrocos.medicalconsult.user.domain;
 
+import br.com.luismarrocos.medicalconsult.consult.domain.Consult;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "USERS")
@@ -28,10 +32,15 @@ public class User {
 
     private Date birthDate;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Consult> consults = new ArrayList<>();
+
     public int getId(){
         return (int) idUser;
     };
 
     public void setId(Long id) {
     }
+
+
 }

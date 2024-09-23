@@ -1,3 +1,4 @@
+
 package br.com.luismarrocos.medicalconsult;
 
 import org.springframework.boot.SpringApplication;
