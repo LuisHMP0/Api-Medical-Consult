@@ -16,7 +16,23 @@ public class Consult {
     @Column(name = "CONSULT_DATE")
     private long consultDate;
 
+    @Column(name = "PROFESSIONAL")
+    private String professional;
+    @Column(name = "SPECIALTY")
+    private String specialty;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_USER", nullable = false)
     private User user;
+
+    public Consult() {
+
+    }
+
+    public Consult(Long idConsult, Long consultDate, String professional, String specialty) {
+        this.idConsult = idConsult;
+        this.consultDate = consultDate;
+        this.professional = professional;
+        this.specialty = specialty;
+        this.user = user;
+    }
 }
