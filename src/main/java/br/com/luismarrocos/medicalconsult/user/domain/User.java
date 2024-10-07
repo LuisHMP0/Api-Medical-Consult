@@ -1,6 +1,7 @@
 package br.com.luismarrocos.medicalconsult.user.domain;
 
 import br.com.luismarrocos.medicalconsult.consult.domain.Consult;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -33,6 +34,7 @@ public class User {
     private Date birthDate;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Consult> consults = new ArrayList<>();
 
     public int getId(){

@@ -1,6 +1,8 @@
 package br.com.luismarrocos.medicalconsult.consult.domain;
 
 import br.com.luismarrocos.medicalconsult.user.domain.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,10 +20,13 @@ public class Consult {
 
     @Column(name = "PROFESSIONAL")
     private String professional;
+
     @Column(name = "SPECIALTY")
     private String specialty;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_USER", nullable = false)
+    @JsonBackReference
     private User user;
 
     public Consult() {
@@ -34,5 +39,8 @@ public class Consult {
         this.professional = professional;
         this.specialty = specialty;
         this.user = user;
+    }
+
+    public void setIdConsult(Long o) {
     }
 }
