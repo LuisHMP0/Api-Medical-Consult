@@ -27,7 +27,7 @@ public class ConsultServices {
     public Consult searchConsult(Long id) {
         Optional<Consult> consult = consultRepository.findById(id);
         return consult.orElseThrow(
-                () -> new ObjectNotFoundException("Especialidae não encontrada! ID: ", id));
+                () -> new ObjectNotFoundException(id, "Consulta não encontrada! ID: " + id));
     }
 
     public void deleteConsult(Long id) throws Exception {

@@ -16,7 +16,7 @@ public class Consult {
     private long idConsult;
 
     @Column(name = "CONSULT_DATE")
-    private long consultDate;
+    private String consultDate;
 
     @Column(name = "PROFESSIONAL")
     private String professional;
@@ -33,7 +33,7 @@ public class Consult {
 
     }
 
-    public Consult(Long idConsult, Long consultDate, String professional, String specialty) {
+    public Consult(Long idConsult, String consultDate, String professional, String specialty) {
         this.idConsult = idConsult;
         this.consultDate = consultDate;
         this.professional = professional;
@@ -42,5 +42,45 @@ public class Consult {
     }
 
     public void setIdConsult(Long o) {
+    }
+
+    public long getIdConsult() {
+        return idConsult;
+    }
+
+    public void setIdConsult(long idConsult) {
+        this.idConsult = idConsult;
+    }
+
+    public String getConsultDate() {
+        return consultDate;
+    }
+
+    public void setConsultDate(String consultDate) {
+        this.consultDate = consultDate;
+    }
+
+    public String getProfessional() {
+        return professional;
+    }
+
+    public void setProfessional(String professional) {
+        this.professional = professional;
+    }
+
+    public String getSpecialty() {
+        return specialty;
+    }
+
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
